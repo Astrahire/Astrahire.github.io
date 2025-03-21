@@ -116,21 +116,24 @@ Let me know if you need further refinements! 🚀</p>
 
     <script>
         const jobData = [
-            { title: "Software Engineer", description: "Develop and maintain web applications.", salary: "$60,000 - $80,000" },
-            { title: "Marketing Specialist", description: "Plan and execute marketing strategies.", salary: "$50,000 - $70,000" },
-            { title: "HR Manager", description: "Manage recruitment and employee relations.", salary: "$70,000 - $90,000" },
-            { title: "Graphic Designer", description: "Create visuals for branding and marketing.", salary: "$45,000 - $65,000" },
-            { title: "Sales Executive", description: "Drive business growth through sales.", salary: "$55,000 - $75,000" }
+            { id: 395, role: "Sr Manager - AML & Compliance", industry: "Fintech", function: "Legal", salary: "28.00-33.00 Lacs", experience: "6-12 Years", age: 35, location: "Gurgaon", education: "Graduation" },
+            { id: 383, role: "Digital Ad sales (Asst. Manager/ Manager/ Sr. Manager)", industry: "Media and entertainment", function: "Sales/Business Development", salary: "9.00-12.50 Lacs", experience: "6-10 Years", age: 38, location: "Chennai", education: "Graduation" },
+            { id: 382, role: "Digital Ad sales (Asst. Manager/ Manager/ Sr. Manager)", industry: "Media and entertainment", function: "Sales/Business Development", salary: "7.00-10.00 Lacs", experience: "2-8 Years", age: 36, location: "Kolkata", education: "Graduation" },
+            { id: 374, role: "Business Partner - Sales (Retail/Corporate) - Mumbai", industry: "Media and entertainment", function: "Sales/Business Development", salary: "10.00-15.00 Lacs", experience: "8-12 Years", age: 35, location: "Mumbai", education: "Graduation" }
         ];
-
-        function displayJobs() {
+          function displayJobs() {
             const jobList = document.getElementById("job-listings");
             let jobHTML = "<ul>";
             jobData.forEach(job => {
-                jobHTML += `<li><strong>${job.title}</strong><br>${job.description}<br>Salary: ${job.salary}</li>`;
+                jobHTML += `<li><strong>${job.role}</strong> (ID: ${job.id})<br>
+                Industry: ${job.industry} | Function: ${job.function}<br>
+                Salary: ${job.salary} | Experience: ${job.experience}<br>
+                Age: ${job.age} | Location: ${job.location}<br>
+                Education: ${job.education}</li>`;
             });
             jobHTML += "</ul>";
             jobList.innerHTML = jobHTML;
+        };
         }
 
         displayJobs();
