@@ -47,6 +47,8 @@
             padding: 15px; 
             margin-top: 20px; 
         }
+        .upload { text-align: center; padding: 20px; }
+        input[type="file"] { margin: 10px 0; padding: 5px; }
         button { 
             background: #00bcd4; 
             color: white; 
@@ -57,6 +59,15 @@
             transition: 0.3s;
         }
         button:hover { background: #008c9e; }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
         form input, form textarea {
             width: 100%;
             padding: 10px;
@@ -84,13 +95,11 @@
             <p>To be the leading recruitment platform that revolutionizes hiring by seamlessly connecting talent with the best opportunities through technology and innovation.</p>
         </section>
         <section>
-            <section id="current-openings">
-        <h2>Current Openings
-            <button id="refresh-jobs">🔄 Refresh</button>
-        </h2>
-        <p>Stay updated with the latest job opportunities!</p>
-        <div id="job-listings">Loading job listings...</div>
-    </section>
+            <h2>Current Openings</h2>
+            <p>Stay updated with the latest job opportunities! Enter job listings below.</p>
+            <textarea id="jobOpenings" placeholder="Enter current job openings here..."></textarea>
+        </section>
+        <section>
             <h2>Apply for a Job</h2>
             <form action="submit_application.html" method="post">
                 <label for="name">Full Name:</label>
@@ -119,24 +128,5 @@
     <footer>
         <p>&copy; 2025 AstraHire. All Rights Reserved.</p>
     </footer>
-    <script>
-        async function fetchJobOpenings() {
-            const sheetUrl = "https://raw.githubusercontent.com/your-username/AstraHire-Jobs/main/jobs.json";
-            try {
-                const response = await fetch(sheetUrl);
-                const jobData = await response.json();
-                const jobOpeningsList = document.getElementById("jobOpeningsList");
-                jobOpeningsList.innerHTML = "";
-                jobData.jobs.forEach(job => {
-                    let li = document.createElement("li");
-                    li.innerHTML = `<strong>${job.title}</strong>: ${job.description}`;
-                    jobOpeningsList.appendChild(li);
-                });
-            } catch (error) {
-                console.error("Error fetching job openings:", error);
-            }
-        }
-        fetchJobOpenings();
-    </script>
 </body>
 </html>
