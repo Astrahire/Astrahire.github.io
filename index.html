@@ -5,14 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AstraHire - Your Hiring Partner</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; }
-        header { background: #14274e; color: white; padding: 20px; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #1e3c72, #2a5298); 
+            color: white; 
+        }
+        header { 
+            background: linear-gradient(145deg, #14274e, #1e3c72); 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+            border-bottom: 5px solid #00bcd4;
+        }
         .container { width: 80%; margin: auto; padding: 20px; }
-        section { background: rgba(255, 255, 255, 0.9); padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); color: black; }
+        section { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 10px; 
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+            color: black; 
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
         h2 { color: #14274e; }
-        footer { background: #14274e; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        footer { 
+            background: linear-gradient(145deg, #14274e, #1e3c72); 
+            color: white; 
+            text-align: center; 
+            padding: 15px; 
+            margin-top: 20px; 
+        }
         .upload { text-align: center; padding: 20px; }
-        input[type="file"] { margin: 10px 0; }
+        input[type="file"] { margin: 10px 0; padding: 5px; }
+        button { 
+            background: #00bcd4; 
+            color: white; 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        button:hover { background: #008c9e; }
     </style>
 </head>
 <body>
@@ -23,25 +63,25 @@
     <div class="container">
         <section>
             <h2>About Us</h2>
-            <p>AstraHire is a leading recruitment platform dedicated to bridging the gap between talent and opportunity. Our goal is to simplify the hiring process, making it more efficient, transparent, and accessible to both job seekers and employers. We leverage innovative solutions to ensure a seamless recruitment experience.</p>
+            <p>AstraHire is a dynamic recruitment platform designed to streamline the hiring process for both employers and job seekers. We leverage cutting-edge technology to match top talent with the right opportunities effortlessly. Our platform ensures a hassle-free, transparent, and efficient recruitment experience, helping businesses scale faster and professionals land their dream roles.</p>
         </section>
         <section>
             <h2>Our Vision</h2>
-            <p>To revolutionize the hiring process by connecting the right talent with the right opportunities efficiently and seamlessly.</p>
+            <p>To be the leading recruitment platform that revolutionizes hiring by seamlessly connecting talent with the best opportunities through technology and innovation.</p>
         </section>
         <section>
             <h2>Our Mission</h2>
-            <p>At AstraHire, we strive to simplify recruitment by providing a smooth and transparent hiring experience for both employers and job seekers.</p>
+            <p>To create a fast, reliable, and transparent recruitment ecosystem that benefits both job seekers and employers, ensuring the perfect match with minimal effort.</p>
         </section>
         <section class="upload">
             <h2>Upload Your Resume</h2>
-            <p>Job seekers, upload your resume and let opportunities find you!</p>
+            <p>Looking for your next opportunity? Upload your resume and let top companies find you!</p>
             <input type="file" accept=".pdf,.doc,.docx">
             <button>Submit</button>
         </section>
         <section>
             <h2>Support</h2>
-            <p>For inquiries, reach out to us at <strong>connect.astrahire@gmail.com</strong></p>
+            <p>Have questions or need assistance? Reach out to us at <strong>connect.astrahire@gmail.com</strong></p>
         </section>
         <section>
             <h2>Testimonials</h2>
