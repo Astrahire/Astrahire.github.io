@@ -40,18 +40,31 @@
         nav a:hover {
             background-color: #575757;
         }
+        .banner {
+            background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .banner h2 {
+            font-size: 3em;
+            margin: 0;
+        }
         .container {
             padding: 20px;
             text-align: center;
         }
-        .about, .services, .testimonials, .contact {
+        .about, .services, .contact {
             background-color: white;
             margin: 20px 0;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .about h2, .services h2, .testimonials h2, .contact h2 {
+        .about h2, .services h2, .contact h2 {
             color: #4CAF50;
         }
         .services ul {
@@ -64,9 +77,6 @@
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .testimonials p {
-            font-style: italic;
         }
         .contact form {
             display: flex;
@@ -108,9 +118,11 @@
     <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
     </nav>
+    <div class="banner">
+        <h2>Connecting Talent with Opportunity</h2>
+    </div>
     <div class="container">
         <section id="about" class="about">
             <h2>About Us</h2>
@@ -123,11 +135,6 @@
                 <li>Freelance Project Management</li>
                 <li>Consultation and Support</li>
             </ul>
-        </section>
-        <section id="testimonials" class="testimonials">
-            <h2>Testimonials</h2>
-            <p>"Astra Hire provided us with the best freelancers who perfectly matched our project requirements. Highly recommended!" - Client A</p>
-            <p>"The platform is user-friendly and the support team is always ready to help. I found my dream freelance job here!" - Freelancer B</p>
         </section>
         <section id="contact" class="contact">
             <h2>Contact Us</h2>
