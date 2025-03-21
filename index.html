@@ -56,7 +56,7 @@
         async function fetchJobs() {
             const sheetID = "16qgWiQ1r5aW37r8ru8vBmCGjGbf0ADMECReR1QMXjKc";
             const sheetName = "Sheet1";  // Ensure the correct sheet name is used
-            const url = `https://docs.google.com/spreadsheets/d/${16qgWiQ1r5aW37r8ru8vBmCGjGbf0ADMECReR1QMXjKc}/gviz/tq?tqx=out:json&sheet=${JOB LISTINGS - ASTRAHIRE }`;
+            const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&sheet=${sheetName}`;
 
             const jobList = document.getElementById("job-listings");
             jobList.innerHTML = "Loading...";
