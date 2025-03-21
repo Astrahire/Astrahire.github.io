@@ -3,137 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AstraHire - Your Hiring Partner</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: linear-gradient(135deg, #1e3c72, #2a5298); 
-            color: white; 
-        }
-        header { 
-            background: linear-gradient(145deg, #14274e, #1e3c72); 
-            color: white; 
-            padding: 20px; 
-            text-align: center; 
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
-            border-bottom: 5px solid #00bcd4;
-        }
-        .container { 
-            width: 80%; 
-            max-width: 1200px;
-            margin: auto; 
-            padding: 20px; 
-        }
-        section { 
-            background: rgba(255, 255, 255, 0.95); 
-            padding: 20px; 
-            margin: 20px auto; 
-            border-radius: 10px; 
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
-            color: black; 
-            transition: transform 0.3s ease-in-out;
-            width: 90%;
-        }
-        section:hover {
-            transform: scale(1.02);
-        }
-        h2 { color: #14274e; }
-        footer { 
-            background: linear-gradient(145deg, #14274e, #1e3c72); 
-            color: white; 
-            text-align: center; 
-            padding: 15px; 
-            margin-top: 20px; 
-        }
-        button { 
-            background: #00bcd4; 
-            color: white; 
-            padding: 10px 15px; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            transition: 0.3s;
-        }
-        button:hover { background: #008c9e; }
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        form button {
-            width: 100%;
-        }
-    </style>
+    <title>AstraHire - Job Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>AstraHire</h1>
-        <p>Your Trusted Hiring Partner</p>
+        <h1>Welcome to AstraHire</h1>
     </header>
-    <div class="container">
-        <section>
-            <h2>About Us</h2>
-            <p>AstraHire is a dynamic recruitment platform designed to streamline the hiring process for both employers and job seekers. We leverage cutting-edge technology to match top talent with the right opportunities effortlessly.</p>
-        </section>
-        <section>
-            <h2>Our Vision</h2>
-            <p>To be the leading recruitment platform that revolutionizes hiring by seamlessly connecting talent with the best opportunities through technology and innovation.</p>
-        </section>
-        <section>
-            <h2>Current Openings</h2>
-            <ul id="jobOpeningsList"></ul>
-        </section>
-        <section>
-            <h2>Apply for a Job</h2>
-            <form action="submit_application.html" method="post">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="linkedin">LinkedIn Profile:</label>
-                <input type="url" id="linkedin" name="linkedin" required>
-                
-                <label for="experience">Years of Experience:</label>
-                <input type="number" id="experience" name="experience" required>
-                
-                <label for="questions">Why do you think you are suitable for this role?</label>
-                <textarea id="questions" name="questions" required></textarea>
-                
-                <button type="submit">Submit Application</button>
-            </form>
-        </section>
-        <section>
-            <h2>Support</h2>
-            <p>Have questions or need assistance? Reach out to us at <strong>connect.astrahire@gmail.com</strong></p>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2025 AstraHire. All Rights Reserved.</p>
-    </footer>
+    
+    <section id="vision">
+        <h2>Our Vision</h2>
+        <p>To be the leading recruitment platform that revolutionizes hiring by seamlessly connecting talent with the best opportunities through technology and innovation.</p>
+    </section>
+
+    <section id="current-openings">
+        <h2>Current Openings
+            <button id="refresh-jobs">🔄 Refresh</button>
+        </h2>
+        <p>Stay updated with the latest job opportunities!</p>
+        <div id="job-listings">Loading job listings...</div>
+    </section>
+
+    <section id="apply">
+        <h2>Apply for a Job</h2>
+        <form id="job-application">
+            <label>Full Name:</label>
+            <input type="text" required>
+
+            <label>Email:</label>
+            <input type="email" required>
+
+            <label>LinkedIn Profile:</label>
+            <input type="url">
+
+            <label>Years of Experience:</label>
+            <input type="number" min="0" required>
+
+            <label>Why do you think you are suitable for this role?</label>
+            <textarea required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
     <script>
-        async function fetchJobOpenings() {
-            const sheetUrl = "https://raw.githubusercontent.com/your-username/AstraHire-Jobs/main/jobs.json";
+        document.getElementById("refresh-jobs").addEventListener("click", fetchJobs);
+
+        async function fetchJobs() {
+            const sheetURL = "https://docs.google.com/spreadsheets/d/16qgWiQ1r5aW37r8ru8vBmCGjGbf0ADMECReR1QMXjKc/gviz/tq?tqx=out:json";
+            const jobList = document.getElementById("job-listings");
+            jobList.innerHTML = "Loading...";
+            
             try {
-                const response = await fetch(sheetUrl);
-                const jobData = await response.json();
-                const jobOpeningsList = document.getElementById("jobOpeningsList");
-                jobOpeningsList.innerHTML = "";
-                jobData.jobs.forEach(job => {
-                    let li = document.createElement("li");
-                    li.innerHTML = `<strong>${job.title}</strong>: ${job.description}`;
-                    jobOpeningsList.appendChild(li);
+                const response = await fetch(sheetURL);
+                const text = await response.text();
+                const jsonData = JSON.parse(text.substring(47, text.length - 2));
+                const rows = jsonData.table.rows;
+                
+                let jobHTML = "<ul>";
+                rows.forEach((row, index) => {
+                    if (index === 0) return; // Skip header row
+                    const [jobID, role, info, description, salary] = row.c.map(cell => cell?.v || "N/A");
+                    jobHTML += `<li><strong>${role}</strong> - ${info}<br>${description}<br>Salary: ${salary}</li>`;
                 });
+                jobHTML += "</ul>";
+                jobList.innerHTML = jobHTML;
             } catch (error) {
-                console.error("Error fetching job openings:", error);
+                jobList.innerHTML = "Failed to load job listings. Please try again.";
             }
         }
-        fetchJobOpenings();
+
+        fetchJobs();
     </script>
 </body>
 </html>
