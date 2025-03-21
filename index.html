@@ -95,38 +95,47 @@
             <p>To be the leading recruitment platform that revolutionizes hiring by seamlessly connecting talent with the best opportunities through technology and innovation.</p>
         </section>
         <section>
-            <h2>Current Openings</h2>
-            <p>Stay updated with the latest job opportunities! Enter job listings below.</p>
-            <textarea id="jobOpenings" placeholder="Enter current job openings here..."></textarea>
-        </section>
-        <section>
-            <h2>Apply for a Job</h2>
-            <form action="submit_application.html" method="post">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+            <section id="current-openings">
+        <h2>Current Openings
+            <button id="refresh-jobs">🔄 Refresh</button>
+        </h2>
+        <p>Stay updated with the latest job opportunities!</p>
+        <div id="job-listings">Loading job listings...</div>
+    </section>
+
+    <section id="apply">
+        <h2>Apply for a Job</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVy_MDfn9godC0667sGrZmGV_ZR2Q46qbtF_quenz366nffw/viewform?usp=preview"></iframe>
+    </section>
+
+    <script>
+        document.getElementById("refresh-jobs").addEventListener("click", fetchJobs);
+
+        async function fetchJobs() {
+            const sheetURL = "https://docs.google.com/spreadsheets/d/16qgWiQ1r5aW37r8ru8vBmCGjGbf0ADMECReR1QMXjKc/gviz/tq?tqx=out:json";
+            const jobList = document.getElementById("job-listings");
+            jobList.innerHTML = "Loading...";
+            
+            try {
+                const response = await fetch(sheetURL);
+                const text = await response.text();
+                const jsonData = JSON.parse(text.substring(47, text.length - 2));
+                const rows = jsonData.table.rows;
                 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="linkedin">LinkedIn Profile:</label>
-                <input type="url" id="linkedin" name="linkedin" required>
-                
-                <label for="experience">Years of Experience:</label>
-                <input type="number" id="experience" name="experience" required>
-                
-                <label for="questions">Why do you think you are suitable for this role?</label>
-                <textarea id="questions" name="questions" required></textarea>
-                
-                <button type="submit">Submit Application</button>
-            </form>
-        </section>
-        <section>
-            <h2>Support</h2>
-            <p>Have questions or need assistance? Reach out to us at <strong>connect.astrahire@gmail.com</strong></p>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2025 AstraHire. All Rights Reserved.</p>
-    </footer>
+                let jobHTML = "<ul>";
+                rows.forEach((row, index) => {
+                    if (index === 0) return; // Skip header row
+                    const [jobID, role, info, description, salary] = row.c.map(cell => cell?.v || "N/A");
+                    jobHTML += `<li><strong>${role}</strong> - ${info}<br>${description}<br>Salary: ${salary}</li>`;
+                });
+                jobHTML += "</ul>";
+                jobList.innerHTML = jobHTML;
+            } catch (error) {
+                jobList.innerHTML = "Failed to load job listings. Please try again.";
+            }
+        }
+
+        fetchJobs();
+    </script>
 </body>
 </html>
