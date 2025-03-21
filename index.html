@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +20,16 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
             border-bottom: 5px solid #00bcd4;
         }
-        .container { width: 80%; margin: auto; padding: 20px; }
+        .container { 
+            width: 80%; 
+            max-width: 1200px;
+            margin: auto; 
+            padding: 20px; 
+        }
         section { 
             background: rgba(255, 255, 255, 0.95); 
             padding: 20px; 
-            margin-bottom: 20px; 
+            margin: 20px 0; 
             border-radius: 10px; 
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
             color: black; 
@@ -46,7 +50,7 @@
         input[type="file"] { margin: 10px 0; padding: 5px; }
         button { 
             background: #00bcd4; 
-            color: BLUE; 
+            color: white; 
             padding: 10px 15px; 
             border: none; 
             border-radius: 5px; 
@@ -74,6 +78,10 @@
             <h2>Our Mission</h2>
             <p>To create a fast, reliable, and transparent recruitment ecosystem that benefits both job seekers and employers, ensuring the perfect match with minimal effort.</p>
         </section>
+        <section>
+            <h2>Current Openings</h2>
+            <p>Stay updated with the latest job opportunities! Browse through our current job listings and apply today.</p>
+        </section>
         <section class="upload">
             <h2>Upload Your Resume</h2>
             <p>Looking for your next opportunity? Upload your resume and let top companies find you!</p>
@@ -96,158 +104,3 @@
     </footer>
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Hire - Freelance Recruiter</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 0;
-            font-size: 1.2em;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        .banner {
-            background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        .banner h2 {
-            font-size: 3em;
-            margin: 0;
-        }
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-        .about, .services, .contact {
-            background-color: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .about h2, .services h2, .contact h2 {
-            color: #4CAF50;
-        }
-        .services ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .services li {
-            background-color: #f4f4f4;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .contact input, .contact textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .contact input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Astra Hire</h1>
-        <p>Your go-to platform for freelance recruitment</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="banner">
-        <h2>Connecting Talent with Opportunity</h2>
-    </div>
-    <div class="container">
-        <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>At Astra Hire, we connect top talent with companies seeking exceptional freelancers for their projects. Our platform ensures that both recruiters and freelancers have a seamless and efficient experience.</p>
-        </section>
-        <section id="services" class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Talent Sourcing</li>
-                <li>Freelance Project Management</li>
-                <li>Consultation and Support</li>
-            </ul>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <form action="mailto:contact@astrahire.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <input type="submit" value="Send Message">
-            </form>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2025 Astra Hire. All rights reserved.</p>
-    </footer>
-</body>
-</html>
->>>>>>> 4ba10c3f19cbbd0caddf806e6a7035146631e44b
