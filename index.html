@@ -6,137 +6,182 @@
     <meta name="google-site-verification" content="9VQ9FjItjIxj1qQz77e-osjB33cBDshzTsBHJUEeRwg" />
     <title>AstraHire - Your Hiring Partner</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: linear-gradient(135deg, #1e3c72, #2a5298); 
-            color: white; 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
         }
-        header { 
-            background: linear-gradient(145deg, #14274e, #1e3c72); 
-            color: white; 
-            padding: 20px; 
-            text-align: center; 
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
-            border-bottom: 5px solid #00bcd4;
+        header, footer {
+            background: linear-gradient(145deg, #14274e, #1e3c72);
+            color: white; text-align: center;
+            padding: 20px;
         }
-        .container { 
-            width: 80%; 
-            max-width: 1200px;
-            margin: auto; 
-            padding: 20px; 
+        nav {
+            background-color: #00bcd4;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
         }
-        section { 
-            background: rgba(255, 255, 255, 0.95); 
-            padding: 20px; 
-            margin: 20px auto; 
-            border-radius: 10px; 
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
-            color: black; 
-            transition: transform 0.3s ease-in-out;
+        nav a {
+            color: white; text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
             width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            background: rgba(255,255,255,0.95);
+            color: black;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
         }
         section:hover {
             transform: scale(1.02);
         }
         h2 { color: #14274e; }
-        footer { 
-            background: linear-gradient(145deg, #14274e, #1e3c72); 
-            color: white; 
-            text-align: center; 
-            padding: 15px; 
-            margin-top: 20px; 
+        ul { padding-left: 20px; }
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-        .upload { text-align: center; padding: 20px; }
-        input[type="file"] { margin: 10px 0; padding: 5px; }
-        button { 
-            background: #00bcd4; 
-            color: white; 
-            padding: 10px 15px; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            transition: 0.3s;
+        .plan {
+            background: #f3f3f3;
+            border-radius: 10px;
+            padding: 15px;
+            border: 2px solid #00bcd4;
         }
-        button:hover { background: #008c9e; }
-        iframe {
-            margin: 20px 0;
-            border: none;
-            width: 100%;
-            height: 400px;
+        .plan h3 {
+            margin-top: 0;
+            color: #14274e;
         }
+        .plan ul { padding-left: 20px; }
     </style>
 </head>
 <body>
+
     <header>
         <h1>AstraHire</h1>
-        <p>Your Trusted Hiring Partner</p>
+        <p>Your Trusted Hiring & Project Management Partner</p>
     </header>
+
+    <nav>
+        <a href="#about-me">About Me</a>
+        <a href="#job-seekers">Job Seekers</a>
+        <a href="#small-businesses">Small Businesses</a>
+        <a href="#pricing">Pricing & Plans</a>
+        <a href="#apply">Apply</a>
+    </nav>
+
     <div class="container">
-        <section>
-            <h2>About Us</h2>
-            <p>AstraHire simplifies recruitment. We connect talent with opportunities. Technology drives our hiring solutions. Effortless, fast, and future-ready. For employers and job seekers alike.</p>
+
+        <section id="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm <strong>Jayanthi Krishnan</strong>, founder of AstraHire and a dual-career professional working as a freelance Project Manager and HR Recruiter. With 10+ years of combined experience in engineering, operations, team coordination, and talent acquisition, I specialize in helping small businesses and startups run smoother projects and build strong teams.</p>
+            <h3>My Expertise:</h3>
+            <ul>
+                <li>Project planning, execution, and reporting</li>
+                <li>HR Recruitment – sourcing, screening, onboarding</li>
+                <li>Process automation & scheduling</li>
+                <li>Team communication & cross-functional coordination</li>
+                <li>Hiring strategy & employer branding for small businesses</li>
+            </ul>
         </section>
-        <section>
-            <h2>Our Vision</h2>
-            <p>To be the leading recruitment platform that revolutionizes hiring by seamlessly connecting talent with the best opportunities through technology and innovation.</p>
+
+        <section id="job-seekers">
+            <h2>Job Seekers</h2>
+            <p>Looking for your next job? Let me guide you!</p>
+            <ul>
+                <li>Free resume review for first-time applicants</li>
+                <li>LinkedIn profile optimization (optional add-on)</li>
+                <li>Job match alerts based on your skills & interests</li>
+                <li>Referral-based hiring – I promote your profile to trusted employers</li>
+            </ul>
+            <p>Submit your profile through the application form below!</p>
         </section>
-        <section id="current-openings">
-            <h2>Current Openings</h2>
-            <p>Stay updated with the latest job opportunities!</p>
-            <div id="job-listings"></div>
+
+        <section id="small-businesses">
+            <h2>Services for Small Businesses</h2>
+            <p>If you're a startup or small business looking to grow smartly, I can help you with:</p>
+            <ul>
+                <li>Freelance Project Management</li>
+                <li>Freelance HR Services – end-to-end recruitment</li>
+                <li>Onboarding process setup</li>
+                <li>Team tracking & productivity tools setup</li>
+            </ul>
+            <p><strong>Bonus:</strong> Initial consultation and requirement gathering are FREE for all new clients!</p>
         </section>
-     <section id="linkedin-updates">
-    <h2>LinkedIn Updates</h2>
-    <p>Follow us on LinkedIn for the latest job updates and news:</p>
-    <a href="https://www.linkedin.com/company/106691316/admin/page-posts/published/" target="_blank">
-        <button>Visit Our LinkedIn</button>
-    </a>
-</section>
+
+        <section id="pricing">
+            <h2>Pricing & Plans</h2>
+            <p>Affordable packages tailored to your business or job-seeking goals.</p>
+            <div class="pricing-table">
+                <div class="plan">
+                    <h3>Starter Plan (FREE)</h3>
+                    <ul>
+                        <li>Initial Consultation</li>
+                        <li>Basic Resume Review / Hiring Needs Assessment</li>
+                        <li>Job Match or Role Definition Help</li>
+                    </ul>
+                </div>
+                <div class="plan">
+                    <h3>Professional Plan – ₹4,999/month</h3>
+                    <ul>
+                        <li>3 Job Postings / Role Closures</li>
+                        <li>Project tracking templates</li>
+                        <li>Candidate screening & scheduling</li>
+                        <li>Weekly progress updates</li>
+                    </ul>
+                </div>
+                <div class="plan">
+                    <h3>Premium Plan – ₹8,999/month</h3>
+                    <ul>
+                        <li>End-to-End Hiring (Up to 5 roles)</li>
+                        <li>Project Setup, Timeline & Reporting</li>
+                        <li>Employer Branding Support</li>
+                        <li>HR + PM dashboard setup</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 10px;"><em>Custom plans available for long-term clients. Let's talk!</em></p>
+        </section>
+
         <section id="apply">
             <h2>Apply for a Job</h2>
-            <p>Click below to apply:</p>
+            <p>Click below to submit your profile:</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVy_MDfn9godC0667sGrZmGV_ZR2Q46qbtF_quenz366nffw/viewform?usp=sf_link" target="_blank">
                 <button>Open Application Form</button>
             </a>
         </section>
-       
+
         <section>
             <h2>Support</h2>
-            <p>Have questions or need assistance? Reach out to us at <strong>contact@astrahire.in</strong></p>
+            <p>Reach me at <strong>contact@astrahire.in</strong> for queries, collaboration, or project proposals.</p>
         </section>
+
         <section>
             <h2>Testimonials</h2>
             <p><strong>Rohan Sharma:</strong> AstraHire made my job search effortless. Within a week, I landed interviews at top companies!</p>
             <p><strong>Pooja Mehta:</strong> The hiring process was smooth and well-organized. Highly recommended for recruiters and job seekers alike.</p>
             <p><strong>Vikram Patel:</strong> Finding the right candidates has never been easier. AstraHire truly simplifies recruitment.</p>
         </section>
+
     </div>
+
     <footer>
         <p>&copy; 2025 AstraHire. All Rights Reserved.</p>
     </footer>
-    <script>
-        const jobData = [
-            { id: 395, role: "Sr Manager - AML & Compliance", industry: "Fintech", function: "Legal", salary: "28.00-33.00 Lacs", experience: "6-12 Years", age: 35, location: "Gurgaon", education: "Graduation" },
-            { id: 383, role: "Digital Ad sales (Asst. Manager/ Manager/ Sr. Manager)", industry: "Media and entertainment", function: "Sales/Business Development", salary: "9.00-12.50 Lacs", experience: "6-10 Years", age: 38, location: "Chennai", education: "Graduation" }
-        ];
 
-        function displayJobs() {
-            const jobList = document.getElementById("job-listings");
-            let jobHTML = "<ul>";
-            jobData.forEach(job => {
-                jobHTML += `<li><strong>${job.role}</strong> (ID: ${job.id})<br>
-                Industry: ${job.industry} | Function: ${job.function}<br>
-                Salary: ${job.salary} | Experience: ${job.experience}<br>
-                Age: ${job.age} | Location: ${job.location}<br>
-                Education: ${job.education}</li><br>`;
-            });
-            jobHTML += "</ul>";
-            jobList.innerHTML = jobHTML;
-        }
-
-        displayJobs();
-    </script>
 </body>
 </html>
